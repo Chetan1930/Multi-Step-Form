@@ -1,20 +1,22 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FormContext } from "../context/FormContext";
 const Step1 = ()=>{
 
     const {handleFormdata, nextStep}=useContext(FormContext);
+
     return(
         <>
         <h1>Step 1 : </h1>
-        <form action="">
+        <form action="" >
             <input onChange={handleFormdata} type="text" name="Name" placeholder="Enter name :" required/>
             <input onChange={handleFormdata} type="text" name="class" placeholder="Class :" required/>
             <input onChange={handleFormdata} type="text" name="rollNo" placeholder="Roll_No :" required/>
+            <button type="submit">Submit</button>
         </form>
 
         <button  disabled> Prev</button>
-        <button onClick={nextStep}>Next</button>
+        <button onClick={nextStep} >Next</button>
         </>
     );
 }
