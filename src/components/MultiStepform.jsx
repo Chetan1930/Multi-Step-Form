@@ -1,25 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import { FormContext } from "../context/FormContext";
 
 
 const MultiStepform = ()=>{
 
-        const [data,setData] = useState({Name:"" , class:"", rollNo:"" , Address:"", phoneNumber:""});
-        const [val,setVal]= useState(1);
-
-        const nextStep= ()=>(setVal(val+1));
-        const prevStep = ()=>(setVal(val-1));
-
-        function handleFormdata (e){
-            setData({...data,[e.target.name]:e.target.value});
-        }
-
-        function runsubmit(e){
-            console.log(data);
-        }
-
+    const {handleFormdata, nextStep, prevStep, runsubmit, data, val} = useContext(FormContext)
 
 return (
     <>
