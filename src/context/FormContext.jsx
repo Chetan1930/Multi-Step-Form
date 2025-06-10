@@ -25,7 +25,7 @@ export const FormProvider = ({ children }) => {
 
   return (
     <FormContext.Provider
-      value={{ handleFormdata, nextStep, prevStep, runfn: runsubmit, data, val }}
+      value={{ handleFormdata, nextStep, prevStep, runfn: runsubmit, data , val}}
     >
       {children}
     </FormContext.Provider>
